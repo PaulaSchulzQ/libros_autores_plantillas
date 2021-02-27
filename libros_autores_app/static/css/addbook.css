@@ -1,0 +1,14 @@
+body{
+    width: 100%;
+}
+
+.nav-link{
+    font-size: 30px;
+}
+
+#block-book{
+    padding-left: 300px;
+}
+.col{
+    margin-right: 100px;
+}

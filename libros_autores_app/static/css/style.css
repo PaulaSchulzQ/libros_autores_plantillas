@@ -1,0 +1,23 @@
+body{
+    width: 100%;
+}
+
+.nav-link{
+    font-size: 30px;
+}
+
+h1{
+    text-align: center;
+}
+
+h5{
+    text-align: center;
+}
+
+.jumbotron.jumbotron-fluid{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+

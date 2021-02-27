@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Author</title>
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'css/addauthor.css' %}">
+      <script src="{% static 'js/script.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body>
+<div class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/addBook">Libros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/addAuthor">Autores</a>
+            </li>
+        </ul>
+    </div>
+    <div class="jumbotron row" id="block-author">
+            <div class="form-group col">
+                <h2>Añadir autor</h2>
+                <form action="/submitAuthor" method="POST">
+                    {% csrf_token %}
+                    <p>Nombre: <input type="text" name="first_name"></p>
+                    <p>Apellido: <input type="text" name="last_name"></p>
+                    <p>Notas</p>
+                    <textarea name="notas" rows="10" cols="30"></textarea>
+                    <button type="Añadir">Añadir</button>
+                </form>
+            </div>
+            <div class="col">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Accion</th>
+                    </thead>
+                    <tbody>
+                        {% for author in authors %}
+                        <tr>
+                            <th scope="col">{{ author.id }}</th>
+                            <td>{{ author.first_name }} {{ author.last_name }}</td>
+                            <td><a href="/author/{{author.id}}">Ver</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</body>
+</html>

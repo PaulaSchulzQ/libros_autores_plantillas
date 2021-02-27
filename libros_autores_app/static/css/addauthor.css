@@ -1,0 +1,11 @@
+body{
+    width: 100%;
+}
+
+.nav-link{
+    font-size: 30px;
+}
+#block-author{
+    padding-left: 300px;
+    padding-right: 100px;
+}
